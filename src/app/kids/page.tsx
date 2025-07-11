@@ -81,36 +81,36 @@ const familyServices = [
     title: "Family Rooms",
     description:
       "Spacious interconnected rooms with extra beds, baby cots, and storage — ideal for families of all sizes.",
-    image: "/family/family-room.jpg",
+    image: "/kids1.jpeg",
   },
   {
     title: "Kids’ Play Zone",
     description:
       "Supervised indoor and outdoor play areas with games, toys, swings, and climbing equipment.",
-    image: "/family/playzone.jpg",
+    image: "/kids2.jpeg",
   },
   {
     title: "Babysitting Services",
     description:
       "Trusted caregivers available upon request to give parents a worry-free break or night out.",
-    image: "/family/babysitting.jpg",
+    image: "/kids3.jpeg",
   },
   {
     title: "Kid-Friendly Dining",
     description:
       "Special kids’ menu with fun meals, colorful cutlery, and allergy-conscious options.",
-    image: "/family/kids-dining.jpg",
+    image: "/kids4.jpeg",
   },
   {
     title: "Entertainment & Activities",
     description:
       "Cartoon channels, kids’ movie nights, face painting, and weekend puppet shows.",
-    image: "/family/activities.jpg",
+    image: "/kids5.jpeg",
   },
   {
     title: "Welcome Kits",
     description:
       "Fun welcome packs for children with coloring books, crayons, puzzles, and snacks.",
-    image: "/family/welcome-kit.jpg",
+    image: "/kids6.jpeg",
   },
 ];

@@ -81,31 +81,31 @@ const transportOptions = [
   {
     title: "Airport Pick-up & Drop-off",
     description: "Punctual and professional airport transfers to ensure your arrival and departure are smooth.",
-    image: "/transport/airport.jpg",
+    image: "/transport1.jpeg",
   },
   {
     title: "City Shuttle Service",
     description: "Explore Mbooni town and nearby attractions with our scheduled shuttle rides.",
-    image: "/transport/shuttle.jpg",
+    image: "/transport2.jpeg",
   },
   {
     title: "Private Chauffeur",
     description: "Enjoy personalized transport with our courteous private drivers for any occasion.",
-    image: "/transport/chauffeur.jpg",
+    image: "/transport3.jpeg",
   },
   {
     title: "Tour Packages",
     description: "Discover scenic spots and local culture with our organized day trips and tour services.",
-    image: "/transport/tour.jpg",
+    image: "/transport4.jpeg",
   },
   {
     title: "Group Transport",
     description: "Spacious vehicles available for weddings, events, conferences and group excursions.",
-    image: "/transport/group.jpg",
+    image: "/transport5.jpeg",
   },
   {
     title: "Executive Car Rental",
     description: "Hire a luxury vehicle with or without a driver — perfect for business travel.",
-    image: "/transport/executive.jpg",
+    image: "/transport6.jpeg",
   },
 ];

@@ -81,31 +81,31 @@ const diningHighlights = [
   {
     title: "Signature Dishes",
     description: "Enjoy our chef’s specialties combining traditional African flavors with global cuisines.",
-    image: "/restaurant/dishes.jpg",
+    image: "/restaurant1.jpeg",
   },
   {
     title: "All-Day Breakfast",
     description: "Kickstart your day with freshly made breakfast served till late morning.",
-    image: "/restaurant/breakfast.jpg",
+    image: "/restaurant2.png",
   },
   {
     title: "Cocktail & Wine Bar",
     description: "Unwind with a variety of crafted cocktails, fine wines, and premium spirits.",
-    image: "/restaurant/bar.jpg",
+    image: "/restaurant3.jpeg",
   },
   {
     title: "Outdoor Garden Dining",
     description: "Dine under the stars in our beautifully landscaped garden seating area.",
-    image: "/restaurant/outdoor.jpg",
+    image: "/restaurant4.jpeg",
   },
   {
     title: "Buffet & À la Carte",
     description: "Choose from rotating buffet themes or pick from our extensive à la carte menu.",
-    image: "/restaurant/buffet.jpg",
+    image: "/restaurant5.jpeg",
   },
   {
     title: "Private Dining",
     description: "Host intimate dinners or VIP meetings with our exclusive private dining service.",
-    image: "/restaurant/private.jpg",
+    image: "/restaurant6.jpeg",
   },
 ];

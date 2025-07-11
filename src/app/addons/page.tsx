@@ -81,36 +81,36 @@ const addOns = [
     title: "Romantic Room Setup",
     description:
       "Includes rose petals, candles, sparkling wine, and custom message card for a romantic atmosphere.",
-    image: "/addons/romantic.jpg",
+    image: "/addons2.jpeg",
   },
   {
     title: "Birthday Surprise Package",
     description:
       "Includes cake, balloons, décor, and room surprise setup tailored to your birthday preferences.",
-    image: "/addons/birthday.jpg",
+    image: "/addons3.jpeg",
   },
   {
     title: "Anniversary Add-On",
     description:
       "Celebrate with flowers, a champagne toast, chocolate treats, and a framed photo souvenir.",
-    image: "/addons/anniversary.jpg",
+    image: "/addons4.jpeg",
   },
   {
     title: "Express Check-In & Checkout",
     description:
       "Skip the queues and save time with personalized fast-track services for arrival and departure.",
-    image: "/addons/express.jpg",
+    image: "/addons5.jpeg",
   },
   {
     title: "Gift Shop Voucher",
     description:
       "Enjoy a shopping voucher to spend at our souvenir and essentials boutique — perfect for gifting.",
-    image: "/addons/gift.jpg",
+    image: "/addons6.jpeg",
   },
   {
     title: "Luxury Essentials Kit",
     description:
       "Includes plush slippers, robe, travel-sized skincare, and scented candles to upgrade your room.",
-    image: "/addons/luxurykit.jpg",
+    image: "/addons7.jpeg",
   },
 ];
