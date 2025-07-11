@@ -5,8 +5,7 @@ import {
   FaUsers,
   FaBriefcase,
   FaChalkboardTeacher,
-  FaRegClock,
-} from "react-icons/fa";
+} from "react-icons/fa"; // Removed FaRegClock
 
 export default function EventsPage() {
   return (

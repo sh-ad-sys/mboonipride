@@ -1,15 +1,19 @@
 'use client';
-import { useState } from 'react';
+
+import { useState, ChangeEvent, FormEvent } from 'react';
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
-  const handleChange = (e: any) =>
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert('Thanks for reaching out. We&apos;ll contact you soon!');
+    alert("Thanks for reaching out. We'll contact you soon!");
   };
 
   return (
