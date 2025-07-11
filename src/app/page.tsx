@@ -45,7 +45,7 @@ export default function HomePage() {
                 className="block px-4 py-3 hover:bg-green-100"
                 onClick={() => setDropdownOpen(false)}
               >
-                Events & Conferences
+                Events &amp; Conferences
               </Link>
             </div>
           )}
@@ -56,8 +56,8 @@ export default function HomePage() {
       <section className="bg-gray-50 py-20 px-6 sm:px-10 md:px-20">
         <div className="max-w-5xl mx-auto space-y-8 text-lg leading-relaxed text-gray-700">
           <p>
-            Welcome to Mbooni Pride Hotel — a modern haven of comfort and style
-            nestled in the heart of Mbooni. Whether you're here for business or
+            Welcome to Mbooni Pride Hotel &mdash; a modern haven of comfort and style
+            nestled in the heart of Mbooni. Whether you&rsquo;re here for business or
             leisure, we offer an unforgettable experience with luxurious rooms,
             exceptional dining, and warm hospitality. Let the serene
             environment, elegant design, and personalized service make your stay

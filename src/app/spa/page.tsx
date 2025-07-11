@@ -16,7 +16,7 @@ export default function SpaPage() {
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold drop-shadow-xl">
-            Spa & Wellness
+            Spa &amp; Wellness
           </h1>
         </div>
       </section>
@@ -25,8 +25,8 @@ export default function SpaPage() {
       <section className="py-12 px-6 md:px-20 bg-gray-50">
         <div className="max-w-4xl mx-auto space-y-6 text-lg leading-relaxed">
           <p>
-            Escape into a world of relaxation and rejuvenation at our exclusive Spa & Wellness center. 
-            Whether you're unwinding after a long journey or treating yourself to a weekend of indulgence, 
+            Escape into a world of relaxation and rejuvenation at our exclusive Spa &amp; Wellness center. 
+            Whether you&rsquo;re unwinding after a long journey or treating yourself to a weekend of indulgence, 
             our state-of-the-art spa offers an oasis of peace, healing, and renewal.
           </p>
           <p>

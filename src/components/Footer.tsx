@@ -1,3 +1,6 @@
+"use client";
+
+import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
@@ -18,11 +21,21 @@ export default function Footer() {
           <div className="flex flex-col items-center">
             <h3 className="text-xl font-semibold mb-4 text-yellow-400">Quick Links</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/" className="hover:text-yellow-400">Home</a></li>
-              <li><a href="/about" className="hover:text-yellow-400">About</a></li>
-              <li><a href="/rooms" className="hover:text-yellow-400">Rooms</a></li>
-              <li><a href="/booking" className="hover:text-yellow-400">Booking</a></li>
-              <li><a href="/contact" className="hover:text-yellow-400">Contact</a></li>
+              <li>
+                <Link href="/" className="hover:text-yellow-400">Home</Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-yellow-400">About</Link>
+              </li>
+              <li>
+                <Link href="/rooms" className="hover:text-yellow-400">Rooms</Link>
+              </li>
+              <li>
+                <Link href="/booking" className="hover:text-yellow-400">Booking</Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-yellow-400">Contact</Link>
+              </li>
             </ul>
           </div>
 
