@@ -1,7 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { FaUsers, FaBriefcase, FaChalkboardTeacher, FaRegClock } from "react-icons/fa";
+import {
+  FaUsers,
+  FaBriefcase,
+  FaChalkboardTeacher,
+  FaRegClock,
+} from "react-icons/fa";
 
 export default function EventsPage() {
   return (
@@ -17,7 +22,7 @@ export default function EventsPage() {
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold text-center">
-            Events & Conferences
+            Events &amp; Conferences
           </h1>
         </div>
       </section>
@@ -29,9 +34,11 @@ export default function EventsPage() {
             Elegant Spaces for Memorable Moments
           </h2>
           <p className="text-lg leading-relaxed text-gray-600">
-            At Mbooni Pride Hotel, we specialize in hosting exceptional events and conferences —
-            from intimate meetings to grand celebrations. Our well-equipped facilities,
-            flexible spaces, and dedicated planning team ensure a seamless experience tailored to your needs.
+            At Mbooni Pride Hotel, we specialize in hosting exceptional events
+            and conferences &mdash; from intimate meetings to grand
+            celebrations. Our well-equipped facilities, flexible spaces, and
+            dedicated planning team ensure a seamless experience tailored to
+            your needs.
           </p>
         </div>
       </section>
@@ -42,23 +49,32 @@ export default function EventsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
             <div className="border rounded-xl p-8 shadow hover:shadow-lg transition">
               <FaBriefcase className="text-green-600 text-4xl mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Business Conferences</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Business Conferences
+              </h3>
               <p className="text-gray-600">
-                Host productive meetings and corporate events with modern AV equipment and high-speed internet.
+                Host productive meetings and corporate events with modern AV
+                equipment and high-speed internet.
               </p>
             </div>
             <div className="border rounded-xl p-8 shadow hover:shadow-lg transition">
               <FaUsers className="text-green-600 text-4xl mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Weddings & Ceremonies</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Weddings &amp; Ceremonies
+              </h3>
               <p className="text-gray-600">
-                Create unforgettable wedding memories in our elegant indoor and outdoor venues.
+                Create unforgettable wedding memories in our elegant indoor and
+                outdoor venues.
               </p>
             </div>
             <div className="border rounded-xl p-8 shadow hover:shadow-lg transition">
               <FaChalkboardTeacher className="text-green-600 text-4xl mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Workshops & Seminars</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                Workshops &amp; Seminars
+              </h3>
               <p className="text-gray-600">
-                Engage your audience in inspiring workshop spaces with customizable seating arrangements.
+                Engage your audience in inspiring workshop spaces with
+                customizable seating arrangements.
               </p>
             </div>
           </div>
@@ -97,7 +113,8 @@ export default function EventsPage() {
         <div className="max-w-3xl mx-auto space-y-6">
           <h3 className="text-3xl font-bold">Ready to Host Your Event?</h3>
           <p className="text-lg">
-            Whether it's a conference, wedding, or private meeting — our team is here to turn your vision into reality.
+            Whether it&apos;s a conference, wedding, or private meeting &mdash;
+            our team is here to turn your vision into reality.
           </p>
           <a
             href="/booking"

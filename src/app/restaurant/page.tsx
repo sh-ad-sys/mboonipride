@@ -16,7 +16,7 @@ export default function RestaurantPage() {
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold drop-shadow-xl">
-            Restaurant & Bar
+            Restaurant &amp; Bar
           </h1>
         </div>
       </section>
@@ -25,13 +25,14 @@ export default function RestaurantPage() {
       <section className="py-12 px-6 md:px-20 bg-gray-50">
         <div className="max-w-4xl mx-auto space-y-6 text-lg leading-relaxed">
           <p>
-            Discover exceptional dining at Mbooni Pride Hotel’s elegant Restaurant & Bar. From morning
-            breakfasts to late-night cocktails, we serve a diverse menu curated by top chefs using
-            locally sourced ingredients. Our ambiance is perfect for both casual meals and fine dining experiences.
+            Discover exceptional dining at Mbooni Pride Hotel&rsquo;s elegant Restaurant &amp; Bar.
+            From morning breakfasts to late-night cocktails, we serve a diverse menu curated by
+            top chefs using locally sourced ingredients. Our ambiance is perfect for both casual
+            meals and fine dining experiences.
           </p>
           <p>
-            Whether you're here for a romantic dinner, a business lunch, or just a refreshing drink at the bar,
-            we guarantee a culinary journey that delights the senses.
+            Whether you&apos;re here for a romantic dinner, a business lunch, or just a refreshing
+            drink at the bar, we guarantee a culinary journey that delights the senses.
           </p>
         </div>
       </section>
@@ -65,7 +66,9 @@ export default function RestaurantPage() {
       {/* CTA */}
       <section className="bg-yellow-500 text-black py-12 text-center px-4">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">Reserve Your Table</h2>
-        <p className="mb-6 text-lg">Join us for a memorable dining experience at Mbooni Pride Hotel.</p>
+        <p className="mb-6 text-lg">
+          Join us for a memorable dining experience at Mbooni Pride Hotel.
+        </p>
         <a
           href="/booking?type=restaurant"
           className="bg-black text-white hover:bg-green-600 font-semibold py-3 px-6 rounded transition"
@@ -80,32 +83,38 @@ export default function RestaurantPage() {
 const diningHighlights = [
   {
     title: "Signature Dishes",
-    description: "Enjoy our chef’s specialties combining traditional African flavors with global cuisines.",
+    description:
+      "Enjoy our chef&rsquo;s specialties combining traditional African flavors with global cuisines.",
     image: "/restaurant1.jpeg",
   },
   {
     title: "All-Day Breakfast",
-    description: "Kickstart your day with freshly made breakfast served till late morning.",
+    description:
+      "Kickstart your day with freshly made breakfast served till late morning.",
     image: "/restaurant2.png",
   },
   {
     title: "Cocktail & Wine Bar",
-    description: "Unwind with a variety of crafted cocktails, fine wines, and premium spirits.",
+    description:
+      "Unwind with a variety of crafted cocktails, fine wines, and premium spirits.",
     image: "/restaurant3.jpeg",
   },
   {
     title: "Outdoor Garden Dining",
-    description: "Dine under the stars in our beautifully landscaped garden seating area.",
+    description:
+      "Dine under the stars in our beautifully landscaped garden seating area.",
     image: "/restaurant4.jpeg",
   },
   {
     title: "Buffet & À la Carte",
-    description: "Choose from rotating buffet themes or pick from our extensive à la carte menu.",
+    description:
+      "Choose from rotating buffet themes or pick from our extensive à la carte menu.",
     image: "/restaurant5.jpeg",
   },
   {
     title: "Private Dining",
-    description: "Host intimate dinners or VIP meetings with our exclusive private dining service.",
+    description:
+      "Host intimate dinners or VIP meetings with our exclusive private dining service.",
     image: "/restaurant6.jpeg",
   },
 ];

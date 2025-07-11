@@ -1,4 +1,3 @@
-// components/Footer.tsx
 import { FaFacebookF, FaInstagram, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
@@ -11,7 +10,7 @@ export default function Footer() {
           <div className="flex flex-col items-center">
             <h3 className="text-xl font-semibold mb-4 text-yellow-400">Mbooni Pride Hotel</h3>
             <p className="text-sm text-gray-300 max-w-xs">
-              Luxury meets comfort at Mbooni Pride. Whether you're here for leisure or business, expect only the best.
+              Luxury meets comfort at Mbooni Pride. Whether you&rsquo;re here for leisure or business, expect only the best.
             </p>
           </div>
 

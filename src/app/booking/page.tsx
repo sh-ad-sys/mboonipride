@@ -153,10 +153,10 @@ export default function BookingPage() {
                 className="w-full p-3 border rounded"
                 onChange={handleChange}
               >
-                <option value="Spa">Spa & Wellness</option>
-                <option value="Restaurant">Restaurant & Bar</option>
+                <option value="Spa">Spa &amp; Wellness</option>
+                <option value="Restaurant">Restaurant &amp; Bar</option>
                 <option value="Transport">Transport Services</option>
-                <option value="Family">Family & Kids</option>
+                <option value="Family">Family &amp; Kids</option>
                 <option value="Addons">Special Add-ons</option>
               </select>
             )}
