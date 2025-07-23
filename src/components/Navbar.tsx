@@ -2,8 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
 
 export default function Navbar() {
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
@@ -14,13 +18,29 @@ export default function Navbar() {
     { label: "Contact Us", href: "/contact" },
   ];
 
+  // ✅ Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setServicesOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <header
       className="fixed top-0 w-full h-20 shadow z-50 text-white"
       style={{ backgroundColor: "#0f172a" }}
     >
       <div className="max-w-7xl mx-auto h-full flex items-center justify-between px-6">
-        {/* Logo and Name */}
         <Link href="/" className="flex items-center gap-3">
           <div className="relative w-16 h-16">
             <Image
@@ -36,8 +56,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Nav Links */}
-        <nav className="flex space-x-6 text-base items-center">
+        <nav className="flex space-x-6 text-base items-center relative">
           {navLinks.map(({ label, href }) => (
             <Link
               key={href}
@@ -48,42 +67,35 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* Our Services Dropdown - group-hover based */}
-          <div className="relative group">
-            <button className="font-bold text-white capitalize">Our Services</button>
+          {/* Our Services Dropdown */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className="font-bold text-white capitalize focus:outline-none"
+            >
+              Our Services
+            </button>
 
-            <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
-              <Link
-                href="/spa"
-                className="block px-4 py-2 text-black hover:text-green-600"
-              >
-                Spa & Wellness
-              </Link>
-              <Link
-                href="/restaurant"
-                className="block px-4 py-2 text-black hover:text-green-600"
-              >
-                Restaurant & Bar
-              </Link>
-              <Link
-                href="/transport"
-                className="block px-4 py-2 text-black hover:text-green-600"
-              >
-                Transport Services
-              </Link>
-              <Link
-                href="/kids"
-                className="block px-4 py-2 text-black hover:text-green-600"
-              >
-                Family and Kids
-              </Link>
-              <Link
-                href="/addons"
-                className="block px-4 py-2 text-black hover:text-green-600"
-              >
-                Special Addons
-              </Link>
-            </div>
+            {servicesOpen && (
+              <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded shadow-lg z-50">
+                {[
+                  { label: "Spa & Wellness", href: "/spa" },
+                  { label: "Restaurant & Bar", href: "/restaurant" },
+                  { label: "Transport Services", href: "/transport" },
+                  { label: "Family and Kids", href: "/kids" },
+                  { label: "Special Addons", href: "/addons" },
+                ].map(({ label, href }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    className="block px-4 py-2 text-black hover:text-green-600"
+                    onClick={() => setServicesOpen(false)}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
         </nav>
       </div>
