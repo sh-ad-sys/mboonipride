@@ -88,7 +88,7 @@ const LayoutCarousel: React.FC = () => {
             About Mbooni Pride Hotel
           </h3>
           <p className="text-gray-700 text-lg leading-relaxed">
-            Mbooni Pride is a premier boutigue-style hotel that is tailored for unforgattable stays, memorable dining experiences, conferencing and a well organized cateering program. It's located in Kikima, Mbooni West, within Makueni County, Kenya specifically along Kitundu Kithungo Road, near Kikima Market. 
+            Mbooni Pride is a premier boutigue-style hotel that is tailored for unforgattable stays, memorable dining experiences, conferencing and a well organized cateering program. It&#39;s located in Kikima, Mbooni West, within Makueni County, Kenya specifically along Kitundu Kithungo Road, near Kikima Market. 
           </p>
         </div>
 
