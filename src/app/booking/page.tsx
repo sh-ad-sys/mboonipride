@@ -66,7 +66,7 @@ export default function BookingPage() {
             onSubmit={handleSubmit}
             className="space-y-4 bg-white shadow p-6 rounded-lg"
           >
-            <h3 className="text-xl font-semibold text-gray-800 mb-2 capitalize">
+            <h3 className="text-xl font-semibold text-yellow-400 mb-2 capitalize">
               {bookingType === "room"
                 ? "Room Booking"
                 : bookingType === "event"

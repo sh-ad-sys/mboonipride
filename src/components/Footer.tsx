@@ -43,7 +43,7 @@ export default function Footer() {
           <div className="flex flex-col items-center">
             <h3 className="text-xl font-semibold mb-4 text-yellow-400">Get in Touch</h3>
             <p className="text-sm text-gray-300">info@mboonipridehotel.com</p>
-            <p className="text-sm text-gray-300 mb-4">+254 710 292 540</p>
+            <p className="text-sm text-gray-300 mb-4">+254 748607114</p>
             <div className="flex justify-center space-x-4 text-yellow-400 text-lg">
               <a href="#"><FaFacebookF /></a>
               <a href="#"><FaInstagram /></a>
