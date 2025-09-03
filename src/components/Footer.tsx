@@ -45,10 +45,10 @@ export default function Footer() {
             <p className="text-sm text-gray-300">info@mboonipridehotel.com</p>
             <p className="text-sm text-gray-300 mb-4">+254 748607114</p>
             <div className="flex justify-center space-x-4 text-yellow-400 text-lg">
-              <a href="#"><FaFacebookF /></a>
-              <a href="#"><FaInstagram /></a>
-              <a href="#"><FaTwitter /></a>
-              <a href="#"><FaEnvelope /></a>
+              <a href="https://www.facebook.com/profile.php?id=100076059831100"><FaFacebookF /></a>
+              <a href="https://www.instagram.com/mboonipride?igsh=YzljYTk1ODg3Zg=="><FaInstagram /></a>
+              
+              
             </div>
           </div>
         </div>

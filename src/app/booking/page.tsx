@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, ChangeEvent, FormEvent } from "react";
+import { Toaster, toast } from "react-hot-toast";
 
 export default function BookingPage() {
   const [bookingType, setBookingType] = useState<"" | "room" | "event" | "service">("");
@@ -31,7 +32,7 @@ export default function BookingPage() {
         ? "Event/Conference"
         : "Service";
 
-    alert(`Thank you for booking a ${typeLabel} with Mbooni Pride Hotel!`);
+    toast.success(`🎉 Thank you for booking a ${typeLabel} with Mbooni Pride Hotel!`);
   };
 
   return (
@@ -171,6 +172,9 @@ export default function BookingPage() {
             </button>
           </form>
         )}
+
+        {/* Toast Container */}
+        <Toaster position="top-center" reverseOrder={false} />
       </div>
     </main>
   );
