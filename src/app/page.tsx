@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaWhatsapp } from 'react-icons/fa';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -41,8 +42,8 @@ const LayoutCarousel: React.FC = () => {
               <Image
                 src={src}
                 alt={`Slide ${index}`}
-                layout="fill"
-                objectFit="cover"
+                fill
+                className="object-cover"
                 priority={index === 0}
               />
             </div>
@@ -71,7 +72,7 @@ const LayoutCarousel: React.FC = () => {
                   </div>
                 </Link>
                 <Link href="/events">
-                  <div className="px-6 py-3 hover:bg-green-600 cursor-pointer">
+                  <div className="px-6 py-3 hover:bg-green-600 text-white cursor-pointer">
                     Events & Conferences
                   </div>
                 </Link>
@@ -88,36 +89,54 @@ const LayoutCarousel: React.FC = () => {
             About Mbooni Pride Hotel
           </h3>
           <p className="text-gray-700 text-lg leading-relaxed">
-            Mbooni Pride is a premier boutigue-style hotel that is tailored for unforgattable stays, memorable dining experiences, conferencing and a well organized cateering program. It&#39;s located in Kikima, Mbooni West, within Makueni County, Kenya specifically along Kitundu Kithungo Road, near Kikima Market. 
+            Mbooni Pride is a premier boutique-style hotel that is tailored for unforgettable stays, memorable dining experiences, conferencing and a well organized catering program. It&#39;s located in Kikima, Mbooni West, within Makueni County, Kenya specifically along Kitundu Kithungo Road, near Kikima Market.
           </p>
         </div>
+      </div>
 
       {/* Location Map Section */}
-<div className="w-full bg-white py-12 px-6">
-  <div className="max-w-4xl mx-auto text-center mb-6">
-    <h3 className="text-2xl font-semibold mb-4 text-gray-800">
-      Find Us Here
-    </h3>
+      <div className="w-full bg-white py-12 px-6">
+        <div className="max-w-4xl mx-auto text-center mb-6">
+          <h3 className="text-2xl font-semibold mb-4 text-gray-800">Find Us Here</h3>
+        </div>
 
-  </div>
+        <div className="w-full h-96 max-w-5xl mx-auto">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.1388686785276!2d37.4466693747253!3d-1.6624938983220807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1825674a8abceb5b%3A0x5fc016c94c81473f!2sMbooni%20Pride%20Hotel!5e0!3m2!1sen!2ske!4v1753258440406!5m2!1sen!2ske"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </div>
 
-  <div className="w-full h-96 max-w-5xl mx-auto">
-   <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.1388686785276!2d37.4466693747253!3d-1.6624938983220807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1825674a8abceb5b%3A0x5fc016c94c81473f!2sMbooni%20Pride%20Hotel!5e0!3m2!1sen!2ske!4v1753258440406!5m2!1sen!2ske"
-  width="100%"
-  height="100%"
-  style={{ border: 0 }}
-  allowFullScreen
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-/>
+{/* Floating WhatsApp Button with Bounce + Label */}
+<div className="fixed bottom-6 right-6 z-50 flex items-center space-x-3">
+  {/* Label */}
+  <span className="bg-white text-green-600 font-medium px-3 py-2 rounded-lg shadow-md hidden sm:block">
+    Chat with us
+  </span>
 
-  </div>
+  {/* Button */}
+  <a
+    href={
+      /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+        ? "whatsapp://send?phone=254710292540&text=Hello%20👋"
+        : "https://wa.me/254710292540?text=Hello%20👋"
+    }
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center transition animate-bounce"
+  >
+    <FaWhatsapp size={28} />
+  </a>
 </div>
 
-          
-        
-      </div>
+
+
     </>
   );
 };

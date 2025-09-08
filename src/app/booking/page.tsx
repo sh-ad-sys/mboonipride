@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, ChangeEvent, FormEvent } from "react";
-import { Toaster, toast } from "react-hot-toast";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 export default function BookingPage() {
   const [bookingType, setBookingType] = useState<"" | "room" | "event" | "service">("");
@@ -16,24 +24,41 @@ export default function BookingPage() {
     guests: "",
   });
 
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogStatus, setDialogStatus] = useState<"success" | "error">("success");
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const typeLabel =
-      bookingType === "room"
-        ? "Room"
-        : bookingType === "event"
-        ? "Event/Conference"
-        : "Service";
+    try {
+      // fake API request simulation
+      const response = { ok: true }; // set ok: false to test error
 
-    toast.success(`🎉 Thank you for booking a ${typeLabel} with Mbooni Pride Hotel!`);
+      if (response.ok) {
+        setDialogStatus("success");
+      } else {
+        setDialogStatus("error");
+      }
+
+      setDialogOpen(true);
+    } catch (err) {
+      setDialogStatus("error");
+      setDialogOpen(true);
+    }
   };
+
+  const typeLabel =
+    bookingType === "room"
+      ? "Room"
+      : bookingType === "event"
+      ? "Event/Conference"
+      : "Service";
 
   return (
     <main className="min-h-screen pt-28 pb-16 px-6 bg-gray-50">
@@ -68,12 +93,7 @@ export default function BookingPage() {
             className="space-y-4 bg-white shadow p-6 rounded-lg"
           >
             <h3 className="text-xl font-semibold text-yellow-400 mb-2 capitalize">
-              {bookingType === "room"
-                ? "Room Booking"
-                : bookingType === "event"
-                ? "Event/Conference Booking"
-                : "Service Booking"}{" "}
-              Form
+              {typeLabel} Booking Form
             </h3>
 
             <input
@@ -92,22 +112,26 @@ export default function BookingPage() {
               className="w-full p-3 border rounded"
               onChange={handleChange}
             />
-            <div className="flex flex-col sm:flex-row gap-4">
-              <input
-                name="checkIn"
-                type="date"
-                required
-                className="w-full p-3 border rounded"
-                onChange={handleChange}
-              />
-              <input
-                name="checkOut"
-                type="date"
-                required
-                className="w-full p-3 border rounded"
-                onChange={handleChange}
-              />
-            </div>
+           <div className="flex flex-col sm:flex-row gap-4">
+  <input
+    name="checkIn"
+    type="date"
+    required
+    min={new Date().toISOString().split("T")[0]} // today or later
+    className="w-full p-3 border rounded"
+    onChange={handleChange}
+  />
+  <input
+    name="checkOut"
+    type="date"
+    required
+    min={form.checkIn || new Date().toISOString().split("T")[0]} // same or after check-in
+    className="w-full p-3 border rounded"
+    onChange={handleChange}
+  />
+</div>
+
+            
 
             {/* Room Booking Fields */}
             {bookingType === "room" && (
@@ -141,6 +165,7 @@ export default function BookingPage() {
                 <input
                   name="guests"
                   type="number"
+                   min="0"
                   placeholder="Expected Number of Guests"
                   required
                   className="w-full p-3 border rounded"
@@ -173,8 +198,26 @@ export default function BookingPage() {
           </form>
         )}
 
-        {/* Toast Container */}
-        <Toaster position="top-center" reverseOrder={false} />
+        {/* Modal Dialog */}
+        <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>
+                {dialogStatus === "success"
+                  ? "🎉 Booking Successful"
+                  : "⚠️ Booking Failed"}
+              </DialogTitle>
+              <DialogDescription>
+                {dialogStatus === "success"
+                  ? `Thank you for booking a ${typeLabel} with Mbooni Pride Hotel. A confirmation email has been sent to ${form.email}.`
+                  : "Sorry, your booking could not be completed. Please try again later."}
+              </DialogDescription>
+            </DialogHeader>
+            <DialogFooter>
+              <Button onClick={() => setDialogOpen(false)}>Close</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
     </main>
   );
