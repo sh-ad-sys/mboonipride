@@ -214,50 +214,75 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         )}
 {/* ✅ Modern Success Modal */}
 <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-  <DialogContent className="bg-white rounded-2xl shadow-2xl border-l-8 border-green-500 animate-in fade-in duration-500">
-    <DialogHeader className="space-y-3 text-center">
-      <div className="flex justify-center">
-        {/* Success Icon */}
-        <div className="flex items-center justify-center">
-  <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center shadow-lg">
-    <svg
-      className="w-12 h-12 text-green-600"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="4"
-      viewBox="0 0 24 24"
-    >
-      <circle
-        cx="12"
-        cy="12"
-        r="10"
+  <DialogContent className="rounded-2xl shadow-xl p-6 text-center max-w-md bg-white">
+    {/* Animated Success Icon */}
+    <div className="flex justify-center mb-4">
+      <svg
+        className="w-20 h-20 text-green-500"
+        fill="none"
         stroke="currentColor"
-        strokeWidth="4"
-        className="text-green-300"
-      />
-      <path
-        d="M6 12l4 4 8-8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="checkmark"
-      />
-    </svg>
-  </div>
-</div>
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+          className="stroke-current text-green-300"
+          strokeDasharray="62.8"
+          strokeDashoffset="62.8"
+        >
+          <animate
+            attributeName="stroke-dashoffset"
+            from="62.8"
+            to="0"
+            dur="0.6s"
+            fill="freeze"
+          />
+        </circle>
+        <path
+          d="M7 13l3 3 7-7"
+          className="stroke-current text-green-600"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeDasharray="20"
+          strokeDashoffset="20"
+        >
+          <animate
+            attributeName="stroke-dashoffset"
+            from="20"
+            to="0"
+            dur="0.4s"
+            begin="0.6s"
+            fill="freeze"
+          />
+        </path>
+      </svg>
+    </div>
 
-      </div>
-      <DialogTitle className="text-2xl font-bold text-yellow-600">
-        Booking Confirmed 🎉
-      </DialogTitle>
-      <DialogDescription className="text-black-600 leading-relaxed">
-        Thank you for booking a <span className="font-semibold">{typeLabel}</span> 
-        with <span className="font-semibold">Mbooni Pride Hotel</span>.  
-        A confirmation email has been sent to <span className="text-green-700 font-medium">{form.email}</span>.  
-        We look forward to hosting you!
-      </DialogDescription>
-    </DialogHeader>
+    {/* ✅ Required Accessible Title */}
+    <DialogTitle className="text-2xl font-bold text-green-700">
+      Booking Successful 🎉
+    </DialogTitle>
+
+    {/* Subheader */}
+    <p className="text-black-700 mt-2 font-medium">
+      Your booking has been confirmed.
+    </p>
+
+    {/* Body Message */}
+    <DialogDescription className="text-black-500 text-sm mt-3">
+      A confirmation email has been sent to{" "}
+      <span className="font-semibold text-green-600">{form.email}</span>. <br />
+      We look forward to hosting you at{" "}
+      <span className="font-semibold">Mbooni Pride Hotel</span>.
+    </DialogDescription>
+
+    {/* Auto-dismiss note (optional) */}
+    <p className="text-xs text-gray-400 mt-4">This will close automatically.</p>
   </DialogContent>
 </Dialog>
+
 
       </div>
     </main>
