@@ -47,25 +47,38 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
   try {
-    // ⏳ Fake API request simulation (replace with real API later)
+    // Fake API call
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // Example "fake response"
-    const response = { ok: true }; // change to false to test error modal
+    const response = { ok: true }; // Replace with real API response
 
     if (response.ok) {
       setDialogStatus("success");
+
+      // ✅ Reset only the form fields (keep bookingType as is)
+      setForm({
+        name: "",
+        email: "",
+        checkIn: "",
+        checkOut: "",
+        roomType: "Single",
+        eventType: "Conference",
+        serviceType: "Spa",
+        guests: "",
+      });
     } else {
       setDialogStatus("error");
     }
 
-    setDialogOpen(true); // ✅ opens modal after response
+    setDialogOpen(true);
   } catch (err) {
     console.error("Booking error:", err);
     setDialogStatus("error");
     setDialogOpen(true);
   }
 };
+
+
 
 
   const typeLabel =
@@ -117,6 +130,7 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
               placeholder="Full Name"
               required
               className="w-full p-3 border rounded"
+               value={form.name}    
               onChange={handleChange}
             />
             <input
@@ -125,6 +139,7 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
               placeholder="Email Address"
               required
               className="w-full p-3 border rounded"
+               value={form.email}    
               onChange={handleChange}
             />
            <div className="flex flex-col sm:flex-row gap-4">
@@ -134,6 +149,7 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     required
     min={new Date().toISOString().split("T")[0]} // today or later
     className="w-full p-3 border rounded"
+     value={form.checkIn}    
     onChange={handleChange}
   />
   <input
@@ -142,6 +158,7 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     required
     min={form.checkIn || new Date().toISOString().split("T")[0]} // same or after check-in
     className="w-full p-3 border rounded"
+     value={form.checkOut}    
     onChange={handleChange}
   />
 </div>
@@ -184,6 +201,7 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
                   placeholder="Expected Number of Guests"
                   required
                   className="w-full p-3 border rounded"
+                   value={form.guests}    
                   onChange={handleChange}
                 />
               </>
@@ -273,7 +291,7 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     {/* Body Message */}
     <DialogDescription className="text-black-500 text-sm mt-3">
       A confirmation email has been sent to{" "}
-      <span className="font-semibold text-green-600">{form.email}</span>. <br />
+      <span className="font-semibold text-green-600 text-center">{form.email}</span>. <br />
       We look forward to hosting you at{" "}
       <span className="font-semibold">Mbooni Pride Hotel</span>.
     </DialogDescription>
