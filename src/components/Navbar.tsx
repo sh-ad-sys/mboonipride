@@ -77,7 +77,8 @@ export default function Navbar() {
             </button>
 
             {servicesOpen && (
-              <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded shadow-lg z-50">
+              <div className="absolute top-full left-0 mt-2 w-screen max-w-xs sm:max-w-sm bg-white rounded shadow-lg z-50">
+
                 {[
                   { label: "Spa & Wellness", href: "/spa" },
                   { label: "Restaurant & Bar", href: "/restaurant" },

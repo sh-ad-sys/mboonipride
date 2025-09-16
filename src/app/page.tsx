@@ -125,7 +125,7 @@ const LayoutCarousel: React.FC = () => {
     href={
       /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
         ? "whatsapp://send?phone=254710292540&text=Hello%20👋"
-        : "https://wa.me/254710292540?text=Hello%20👋"
+        : "https://wa.me/254710292540?text=Hello%2C%20welcome%20to%20Mbooni%20Pride%20Hotel%20%F0%9F%91%8B"
     }
     target="_blank"
     rel="noopener noreferrer"
