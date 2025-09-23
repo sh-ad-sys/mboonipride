@@ -1,15 +1,16 @@
 'use client';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 
 const layoutImages = [
-  '/image13.jpg',
-  '/image2.jpg',
-  '/image7.jpg',
-  '/image3.jpg',
+  "/image13.jpg",
+  "/image2.jpg",
+  "/image7.jpg",
+  "/image3.jpg",
 ];
 
 export default function LayoutCarousel() {
@@ -30,12 +31,15 @@ export default function LayoutCarousel() {
       >
         {layoutImages.map((src, index) => (
           <SwiperSlide key={index}>
-            <img
-              src={src}
-              alt={`Layout ${index + 1}`}
-              className="rounded-xl w-full h-[250px] object-cover shadow-lg"
-              loading="lazy"
-            />
+            <div className="relative w-full h-[250px]">
+              <Image
+                src={src}
+                alt={`Layout ${index + 1}`}
+                fill
+                className="rounded-xl object-cover shadow-lg"
+                priority={index === 0} // preloads first image for better LCP
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
