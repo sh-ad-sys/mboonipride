@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   },
 };
 
+<<<<<<< HEAD
 export default function RootLayout({
   children,
 }: {
@@ -30,6 +31,11 @@ export default function RootLayout({
         <meta name="theme-color" content="#0f172a" />
       </head>
 
+=======
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+>>>>>>> 6814166c3dc938bae1d8b673c70c7166ad1653d2
       <body className="bg-white text-gray-800">
         {/* Fixed Navbar */}
         <Navbar />
