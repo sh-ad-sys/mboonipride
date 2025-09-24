@@ -38,10 +38,10 @@ export default function TwinRoom() {
 
         {/* Room Images */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {["twin1.jpg", "twin2.jpg", "twin3.jpg"].map((img, idx) => (
+          {["twin1.jpg", "room3.jpg", "twin3.jpg"].map((img, idx) => (
             <div key={idx} className="relative h-64 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src={`/rooms/${img}`}
+                src={`/${img}`}
                 alt={`Twin Bed ${idx + 1}`}
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-500"

@@ -1,10 +1,11 @@
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Head from "next/head";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mbooni Pride Hotel",
+  title: "Mbooni Pride Hotel", // can also be a string or null
   description: "Luxury and Comfort in Mbooni Hills",
   icons: {
     icon: [
@@ -16,34 +17,36 @@ export const metadata: Metadata = {
   },
 };
 
-<<<<<<< HEAD
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <head>
-        {/* ✅ Explicitly add favicon for browser tabs */}
-        <link rel="icon" href="/logo2.png" sizes="32x32" type="image/png" />
-        <link rel="apple-touch-icon" href="/logo2.png" />
-        <meta name="theme-color" content="#0f172a" />
-      </head>
+// Type-safe title extraction
+function getSafeTitle(title: Metadata["title"]): string {
+  if (!title) return "Mbooni Pride Hotel"; // fallback if null/undefined
+  if (typeof title === "string") return title;
+  if (typeof title === "object") {
+    // could have "default" or "absolute" properties internally
+    // safely access known string properties
+    if ("absolute" in title && typeof title.absolute === "string") return title.absolute;
+    if ("default" in title && typeof title.default === "string") return title.default;
+  }
+  return "Mbooni Pride Hotel";
+}
 
-=======
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const safeTitle = getSafeTitle(metadata.title);
+
   return (
     <html lang="en">
->>>>>>> 6814166c3dc938bae1d8b673c70c7166ad1653d2
+      <Head>
+        <title>{safeTitle}</title>
+        <meta name="description" content={metadata.description ?? ""} />
+        <link rel="icon" href="/logo2.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/logo2.png" sizes="16x16" type="image/png" />
+        <link rel="shortcut icon" href="/logo2.png" />
+        <link rel="apple-touch-icon" href="/logo2.png" />
+      </Head>
+
       <body className="bg-white text-gray-800">
-        {/* Fixed Navbar */}
         <Navbar />
-
-        {/* Content shifted down by 80px to match h-20 header */}
         <main className="pt-20">{children}</main>
-
-        {/* Optional Footer */}
         <Footer />
       </body>
     </html>

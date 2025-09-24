@@ -42,17 +42,11 @@ export default function Footer() {
           {/* Column 3 */}
           <div className="flex flex-col items-center">
             <h3 className="text-xl font-semibold mb-4 text-yellow-400">Get in Touch</h3>
-<<<<<<< HEAD
             <p className="text-sm text-gray-300">pridehotelmbooni@gmail.com</p>
-=======
-            <p className="text-sm text-gray-300">info@mboonipridehotel.com</p>
->>>>>>> 6814166c3dc938bae1d8b673c70c7166ad1653d2
             <p className="text-sm text-gray-300 mb-4">+254 748607114</p>
             <div className="flex justify-center space-x-4 text-yellow-400 text-lg">
               <a href="https://www.facebook.com/profile.php?id=100076059831100"><FaFacebookF /></a>
               <a href="https://www.instagram.com/mboonipride?igsh=YzljYTk1ODg3Zg=="><FaInstagram /></a>
-              
-              
             </div>
           </div>
         </div>
