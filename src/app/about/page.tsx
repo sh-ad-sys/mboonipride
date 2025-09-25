@@ -11,12 +11,12 @@ export default function AboutPage() {
           <p className="text-gray-600">Each room is crafted with modern elegance and royal heritage for unforgettable comfort.</p>
         </div>
         <div className="bg-white rounded-lg shadow p-6 text-center">
-          <h2 className="text-xl font-semibold mb-2">5-Star Service</h2>
-          <p className="text-gray-600">We offer 24/7 concierge, spa, fine dining, and more for the perfect stay.</p>
+          <h2 className="text-xl font-semibold mb-2">3-Star Service</h2>
+          <p className="text-gray-600">Enjoy attentive service designed to make your stay relaxing and hassle-free. We offer friendly 24/7 assistance, cozy accommodations, on-site dining, and essential amenities to ensure a pleasant experience for both business and leisure travelers.</p>
         </div>
         <div className="bg-white rounded-lg shadow p-6 text-center">
-          <h2 className="text-xl font-semibold mb-2">Global Recognition</h2>
-          <p className="text-gray-600">Ranked among the top luxury hotels worldwide for design and experience.</p>
+          <h2 className="text-xl font-semibold mb-2">Guest-Favorite Experience</h2>
+          <p className="text-gray-600">Rated highly for value, convenience, and friendly service, our hotel is a preferred stop for travelers seeking a quality stay without compromising comfort.</p>
         </div>
       </div>
     </section>
