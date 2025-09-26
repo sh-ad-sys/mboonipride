@@ -19,18 +19,32 @@ export default function ContactPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setDialogOpen(true);
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
-    // Auto-close after 4s
-    setTimeout(() => {
-      setDialogOpen(false);
-    }, 4000);
+  try {
+    const response = await fetch("http://localhost/mboonipride/contact.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
 
-    // Reset form
-    setForm({ name: '', email: '', message: '' });
-  };
+    const result = await response.json();
+
+    if (response.ok && result.success) {
+      setDialogOpen(true);
+      setForm({ name: "", email: "", message: "" });
+
+      // Auto-close modal after 4s
+      setTimeout(() => setDialogOpen(false), 4000);
+    } else {
+      alert(result.error || "Something went wrong!");
+    }
+  } catch (err) {
+    console.error("Error submitting message:", err);
+    alert("Server error. Please try again later.");
+  }
+};
 
   return (
     <section className="max-w-2xl mx-auto space-y-6 pt-28 pb-16 px-6 bg-gray-50">

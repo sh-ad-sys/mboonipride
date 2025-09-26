@@ -16,12 +16,20 @@ export default function BookingPage() {
     checkIn: "",
     checkOut: "",
     roomType: "Single",
+    roomId: "3",       // maps roomType to DB room_id
     eventType: "Conference",
     guests: "",
   });
 
   const [dialogOpen, setDialogOpen] = useState(false);
   const [dialogStatus, setDialogStatus] = useState<"success" | "error">("success");
+
+  // Map room types to DB room IDs (adjust IDs if needed)
+  const roomMap: { [key: string]: string } = {
+    Single: "3",
+    Twin: "2",
+    Deluxe: "1",
+  };
 
   useEffect(() => {
     if (dialogOpen && dialogStatus === "success") {
@@ -33,17 +41,36 @@ export default function BookingPage() {
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+      ...(name === "roomType" ? { roomId: roomMap[value] } : {}), // update roomId when roomType changes
+    }));
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Fake API call
-      const response = { ok: true }; // Replace with real API
+      const response = await fetch("http://localhost/mboonipride/booking.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          bookingType,
+          name: form.name,
+          email: form.email,
+          checkIn: form.checkIn,
+          checkOut: form.checkOut,
+          roomId: form.roomId,        // integer ID sent to backend
+          eventType: form.eventType,
+          guests: form.guests,
+        }),
+      });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         setDialogStatus("success");
         setForm({
           name: "",
@@ -51,6 +78,7 @@ export default function BookingPage() {
           checkIn: "",
           checkOut: "",
           roomType: "Single",
+          roomId: "3",
           eventType: "Conference",
           guests: "",
         });

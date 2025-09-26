@@ -1,24 +1,70 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Wifi, Tv, Coffee, Snowflake, BedDouble, Bath, Users } from "lucide-react";
 
+interface Room {
+  room_id: number;
+  room_number: string;
+  room_type: string;
+  capacity: number;
+  status: string;
+  description: string;
+}
+
 export default function SingleRoom() {
+  const [rooms, setRooms] = useState<Room[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchRooms() {
+      try {
+        const res = await fetch("http://localhost/mboonipride/backend/rooms.php?type=Single");
+        const data = await res.json();
+        setRooms(data.rooms || []);
+      } catch (err) {
+        console.error("Failed to fetch rooms:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchRooms();
+  }, []);
+
+  if (loading) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <p className="text-gray-600 text-lg">Loading Single Rooms...</p>
+      </main>
+    );
+  }
+
+  if (rooms.length === 0) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <p className="text-gray-600 text-lg">No Single Rooms available.</p>
+      </main>
+    );
+  }
+
+  const room = rooms[0]; // show first Single room for now
+
   return (
     <main className="bg-white text-gray-800">
       {/* Hero Section */}
       <section className="relative h-[60vh] w-full">
         <Image
-          src="/room1.jpg"
-          alt="Single Bed"
+          src="/room1.jpg" // Replace with room.image_url if added in DB
+          alt={room.room_type}
           fill
           className="object-cover"
           priority
         />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold drop-shadow-xl">
-            Single Bed
+            {room.room_type}
           </h1>
         </div>
       </section>
@@ -32,10 +78,11 @@ export default function SingleRoom() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <h2 className="text-3xl font-bold mb-4 text-gray-900">Relax in Comfort</h2>
+          <h2 className="text-3xl font-bold mb-4 text-gray-900">
+            Relax in Comfort
+          </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Our Single Bed is designed for solo travelers who value privacy and comfort. 
-            Enjoy a cozy space with premium amenities, high-speed Wi-Fi, and modern décor.
+            {room.description}
           </p>
         </motion.div>
 
@@ -50,7 +97,7 @@ export default function SingleRoom() {
             <div key={i} className="relative w-full h-64 rounded-2xl overflow-hidden shadow-lg">
               <Image
                 src={`/${img}`}
-                alt={`Single Bed ${i + 1}`}
+                alt={`${room.room_type} ${i + 1}`}
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-300"
               />
@@ -92,9 +139,12 @@ export default function SingleRoom() {
           className="text-center"
         >
           <p className="text-2xl font-bold text-gray-900 mb-4">Ksh. 2,500 / Night</p>
-          <button className="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white text-lg font-semibold rounded-full shadow-md transition-transform transform hover:scale-105">
-            Book Now
-          </button>
+           <a
+          href="/booking"
+          className="inline-block bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full shadow hover:bg-yellow-600 transition"
+        >
+          Book Now
+        </a>
         </motion.div>
       </section>
     </main>
