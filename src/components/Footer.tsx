@@ -1,0 +1,81 @@
+"use client";
+
+import Link from "next/link";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+
+export default function Footer() {
+  return (
+    <footer className="bg-gray-900 text-white border-t border-gray-700">
+      {/* Upper Section */}
+      <div className="bg-gray-800">
+        <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+          {/* Column 1 */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-xl font-semibold mb-4 text-yellow-400">Mbooni Pride Hotel</h3>
+            <p className="text-sm text-gray-300 max-w-xs">
+              Luxury meets comfort at Mbooni Pride. Whether you&rsquo;re here for leisure or business, expect only the best.
+            </p>
+          </div>
+
+          {/* Column 2 */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-xl font-semibold mb-4 text-yellow-400">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/" className="hover:text-yellow-400">Home</Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-yellow-400">About</Link>
+              </li>
+              <li>
+                <Link href="/rooms" className="hover:text-yellow-400">Rooms</Link>
+              </li>
+              <li>
+                <Link href="/booking" className="hover:text-yellow-400">Booking</Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-yellow-400">Contact</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3 */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-xl font-semibold mb-4 text-yellow-400">Get in Touch</h3>
+            {/* Email link */}
+            <p className="text-sm text-gray-300">
+              <a
+                href="mailto:pridehotelmbooni@gmail.com"
+                className="hover:text-yellow-400"
+              >
+                pridehotelmbooni@gmail.com
+              </a>
+            </p>
+            {/* Phone link */}
+            <p className="text-sm text-gray-300 mb-4">
+              <a
+                href="tel:+254748607114"
+                className="hover:text-yellow-400"
+              >
+                +254 748607114
+              </a>
+            </p>
+            <div className="flex justify-center space-x-4 text-yellow-400 text-lg">
+              <a href="https://www.facebook.com/profile.php?id=100076059831100" target="_blank" rel="noopener noreferrer">
+                <FaFacebookF />
+              </a>
+              <a href="https://www.instagram.com/mboonipride?igsh=YzljYTk1ODg3Zg==" target="_blank" rel="noopener noreferrer">
+                <FaInstagram />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Footer */}
+      <div className="text-center py-4 text-sm text-gray-400 border-t border-gray-700">
+        © {new Date().getFullYear()} Mbooni Pride Hotel. All rights reserved.
+      </div>
+    </footer>
+  );
+}
