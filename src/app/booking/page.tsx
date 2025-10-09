@@ -53,6 +53,7 @@ export default function BookingPage() {
     e.preventDefault();
 
     try {
+<<<<<<< HEAD
       const response = await fetch("http://localhost/mboonipride/backend/booking.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -66,6 +67,21 @@ export default function BookingPage() {
   eventType: form.eventType,
 }),
 
+=======
+      const response = await fetch("http://localhost/mboonipride/booking.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          bookingType,
+          name: form.name,
+          email: form.email,
+          checkIn: form.checkIn,
+          checkOut: form.checkOut,
+          roomId: form.roomId,        // integer ID sent to backend
+          eventType: form.eventType,
+          guests: form.guests,
+        }),
+>>>>>>> 2f1c36eff76846b36e47b35d4c747403695cd57e
       });
 
       const result = await response.json();
