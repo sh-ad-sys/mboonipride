@@ -52,7 +52,7 @@ export default function ContactPage() {
   e.preventDefault();
 
   try {
-    const response = await fetch("http://localhost/mboonipride/contact.php", {
+    const response = await fetch("http://localhost/mboonipride/backend/contact.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),

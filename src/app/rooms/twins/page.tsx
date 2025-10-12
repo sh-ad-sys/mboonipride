@@ -43,7 +43,7 @@ export default function TwinRoom() {
   if (loading) {
     return (
       <main className="min-h-screen flex items-center justify-center">
-        <p className="text-gray-600 text-lg">Loading Twin Rooms...</p>
+        <p className="text-gray-600 text-lg">Loading Twin Suites...</p>
       </main>
     );
   }
@@ -51,7 +51,7 @@ export default function TwinRoom() {
   if (rooms.length === 0) {
     return (
       <main className="min-h-screen flex items-center justify-center">
-        <p className="text-gray-600 text-lg">No Twin Rooms available.</p>
+        <p className="text-gray-600 text-lg">No Twin Rooms Suites.</p>
       </main>
     );
   }
@@ -63,7 +63,7 @@ export default function TwinRoom() {
       {/* Hero Section */}
       <section className="relative h-[60vh] w-full">
         <Image
-          src={room.image_url ? `/${room.image_url}` : "/room3.jpg"}
+          src={room.image_url ? `/${room.image_url}` : "/twin1.jpg"}
           alt={room.room_type}
           fill
           className="object-cover brightness-75"
@@ -71,7 +71,7 @@ export default function TwinRoom() {
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black/40">
           <h1 className="text-white text-4xl md:text-5xl font-bold drop-shadow-xl capitalize">
-            {room.room_type} Room
+            {room.room_type} Suite
           </h1>
         </div>
       </section>
@@ -88,7 +88,7 @@ export default function TwinRoom() {
             Spacious Comfort for Two
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Our Twin Rooms are designed for comfort and functionality, featuring two single beds,
+            Our Twin Suites are designed for comfort and functionality, featuring two single beds,
             elegant interiors, and all the modern amenities you need for a relaxing stay.
           </p>
         </motion.div>

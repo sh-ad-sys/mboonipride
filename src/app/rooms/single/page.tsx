@@ -46,7 +46,7 @@ export default function SingleRoom() {
   if (loading) {
     return (
       <main className="min-h-screen flex items-center justify-center">
-        <p className="text-gray-600 text-lg">Loading Single Rooms...</p>
+        <p className="text-gray-600 text-lg">Loading Single Suites...</p>
       </main>
     );
   }
@@ -54,7 +54,7 @@ export default function SingleRoom() {
   if (rooms.length === 0) {
     return (
       <main className="min-h-screen flex items-center justify-center">
-        <p className="text-gray-600 text-lg">No Single Rooms available.</p>
+        <p className="text-gray-600 text-lg">No Single Suites available.</p>
       </main>
     );
   }
@@ -74,7 +74,7 @@ export default function SingleRoom() {
         />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold drop-shadow-xl capitalize">
-            {room.room_type} Room
+            {room.room_type} Suite
           </h1>
         </div>
       </section>
@@ -91,7 +91,7 @@ export default function SingleRoom() {
           <h2 className="text-3xl font-bold mb-4 text-gray-900">Relax in Comfort</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             {room.description ||
-              "Experience peace and comfort in our elegant Single Rooms, ideal for solo travelers. Enjoy cozy furnishings, top-tier amenities, and the privacy you deserve."}
+              "Experience peace and comfort in our elegant Single Suites, ideal for solo travelers. Enjoy cozy furnishings, top-tier amenities, and the privacy you deserve."}
           </p>
         </motion.div>
 

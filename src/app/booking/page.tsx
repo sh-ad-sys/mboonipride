@@ -179,9 +179,9 @@ export default function BookingPage() {
                 onChange={handleChange}
                 value={form.roomType}
               >
-                <option value="Single">Single Bed</option>
-                <option value="Twin">Twin Bed</option>
-                <option value="Deluxe">Deluxe Bed</option>
+                <option value="Single">Single Suite</option>
+                <option value="Twin">Twin Suite</option>
+                <option value="Deluxe">Deluxe Suite</option>
               </select>
             )}
 

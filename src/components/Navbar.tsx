@@ -81,9 +81,9 @@ export default function Navbar() {
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-48 bg-white rounded-lg shadow-lg z-50">
                 <div className="flex flex-col text-center">
                   {[
-                    { label: "Single Room", href: "/rooms/single" },
-                    { label: "Twin Room", href: "/rooms/twin" },
-                    { label: "Deluxe Room", href: "/rooms/deluxe" },
+                    { label: "Single Suite", href: "/rooms/single" },
+                    { label: "Twin Suite", href: "/rooms/twin" },
+                    { label: "Deluxe Suite", href: "/rooms/deluxe" },
                   ].map(({ label, href }) => (
                     <Link
                       key={href}
@@ -139,13 +139,13 @@ export default function Navbar() {
             <summary className="cursor-pointer font-bold">Rooms</summary>
             <div className="flex flex-col items-start space-y-2 mt-2 ml-4">
               <Link href="/rooms/single" onClick={() => setMobileMenuOpen(false)}>
-                Single Room
+                Single Suite
               </Link>
               <Link href="/rooms/twin" onClick={() => setMobileMenuOpen(false)}>
-                Twin Room
+                Twin Suite
               </Link>
               <Link href="/rooms/deluxe" onClick={() => setMobileMenuOpen(false)}>
-                Deluxe Room
+                Deluxe Suite
               </Link>
             </div>
           </details>

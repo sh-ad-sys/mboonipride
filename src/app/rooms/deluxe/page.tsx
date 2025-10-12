@@ -57,7 +57,7 @@ export default function DeluxeRoom() {
   if (loading) {
     return (
       <main className="min-h-screen flex items-center justify-center bg-gray-50">
-        <p className="text-gray-600 text-lg">Loading Deluxe Rooms...</p>
+        <p className="text-gray-600 text-lg">Loading Deluxe Suites...</p>
       </main>
     );
   }
@@ -65,7 +65,7 @@ export default function DeluxeRoom() {
   if (rooms.length === 0) {
     return (
       <main className="min-h-screen flex items-center justify-center bg-gray-50">
-        <p className="text-gray-600 text-lg">No Deluxe Rooms available.</p>
+        <p className="text-gray-600 text-lg">No Deluxe Suites available.</p>
       </main>
     );
   }
@@ -85,7 +85,7 @@ export default function DeluxeRoom() {
         />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold drop-shadow-xl capitalize">
-            {room.room_type} Room
+            {room.room_type} Suite
           </h1>
         </div>
       </section>
@@ -93,10 +93,10 @@ export default function DeluxeRoom() {
       {/* Description Section */}
       <section className="max-w-4xl mx-auto mt-12 px-4 text-center">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
-          About This Room
+          About This Suite
         </h2>
         <p className="text-gray-700 leading-relaxed">
-          Our Deluxe Room offers the perfect combination of comfort and
+          Our Deluxe Suites offer the perfect combination of comfort and
           elegance, ensuring a relaxing stay. Enjoy modern amenities and a cozy
           atmosphere designed for your ultimate comfort.
         </p>
