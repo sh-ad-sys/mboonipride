@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 
@@ -106,9 +106,9 @@ const diningHighlights = [
     image: "/restaurant4.jpeg",
   },
   {
-    title: "Buffet & À la Carte",
+    title: "Buffet & Ã€ la Carte",
     description:
-      "Choose from rotating buffet themes or pick from our extensive à la carte menu.",
+      "Choose from rotating buffet themes or pick from our extensive Ã  la carte menu.",
     image: "/restaurant5.jpeg",
   },
   {

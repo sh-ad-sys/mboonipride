@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import Slider from 'react-slick';
@@ -124,7 +124,7 @@ const LayoutCarousel: React.FC = () => {
   <a
     href={
       /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
-        ? "whatsapp://send?phone=254710292540&text=Hello%20👋"
+        ? "whatsapp://send?phone=254710292540&text=Hello%20ðŸ‘‹"
         : "https://wa.me/254710292540?text=Hello%2C%20welcome%20to%20Mbooni%20Pride%20Hotel%20%F0%9F%91%8B"
     }
     target="_blank"

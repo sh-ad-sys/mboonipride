@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import {
@@ -16,7 +16,7 @@ export default function BookingPage() {
     checkIn: "",
     checkOut: "",
     roomType: "Single",
-    roomId: "3",       // maps roomType to DB room_id
+    roomId: "3", // maps roomType to DB room_id
     eventType: "Conference",
     guests: "",
   });
@@ -45,7 +45,7 @@ export default function BookingPage() {
     setForm((prev) => ({
       ...prev,
       [name]: value,
-      ...(name === "roomType" ? { roomId: roomMap[value] } : {}), // update roomId when roomType changes
+      ...(name === "roomType" ? { roomId: roomMap[value] } : {}),
     }));
   };
 
@@ -53,22 +53,7 @@ export default function BookingPage() {
     e.preventDefault();
 
     try {
-<<<<<<< HEAD
       const response = await fetch("http://localhost/mboonipride/backend/booking.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-       body: JSON.stringify({
-  bookingType,
-  name: form.name,
-  email: form.email,
-  checkIn: form.checkIn,
-  checkOut: form.checkOut,
-  roomType: form.roomType,
-  eventType: form.eventType,
-}),
-
-=======
-      const response = await fetch("http://localhost/mboonipride/booking.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -77,11 +62,11 @@ export default function BookingPage() {
           email: form.email,
           checkIn: form.checkIn,
           checkOut: form.checkOut,
-          roomId: form.roomId,        // integer ID sent to backend
+          roomId: form.roomId,
+          roomType: form.roomType,
           eventType: form.eventType,
           guests: form.guests,
         }),
->>>>>>> 2f1c36eff76846b36e47b35d4c747403695cd57e
       });
 
       const result = await response.json();
@@ -237,69 +222,81 @@ export default function BookingPage() {
           </form>
         )}
 
-        {/* Success Modal */}
+        {/* Success/Error Modal */}
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
           <DialogContent className="rounded-2xl shadow-xl p-6 text-center max-w-md bg-white">
             <div className="flex justify-center mb-4">
-              <svg
-                className="w-20 h-20 text-green-500"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  className="stroke-current text-green-300"
-                  strokeDasharray="62.8"
-                  strokeDashoffset="62.8"
+              {dialogStatus === "success" ? (
+                <svg
+                  className="w-20 h-20 text-green-500"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
                 >
-                  <animate
-                    attributeName="stroke-dashoffset"
-                    from="62.8"
-                    to="0"
-                    dur="0.6s"
-                    fill="freeze"
-                  />
-                </circle>
-                <path
-                  d="M7 13l3 3 7-7"
-                  className="stroke-current text-green-600"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeDasharray="20"
-                  strokeDashoffset="20"
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    className="stroke-current text-green-300"
+                    strokeDasharray="62.8"
+                    strokeDashoffset="62.8"
+                  >
+                    <animate
+                      attributeName="stroke-dashoffset"
+                      from="62.8"
+                      to="0"
+                      dur="0.6s"
+                      fill="freeze"
+                    />
+                  </circle>
+                  <path
+                    d="M7 13l3 3 7-7"
+                    className="stroke-current text-green-600"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeDasharray="20"
+                    strokeDashoffset="20"
+                  >
+                    <animate
+                      attributeName="stroke-dashoffset"
+                      from="20"
+                      to="0"
+                      dur="0.4s"
+                      begin="0.6s"
+                      fill="freeze"
+                    />
+                  </path>
+                </svg>
+              ) : (
+                <svg
+                  className="w-20 h-20 text-red-500"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
                 >
-                  <animate
-                    attributeName="stroke-dashoffset"
-                    from="20"
-                    to="0"
-                    dur="0.4s"
-                    begin="0.6s"
-                    fill="freeze"
-                  />
-                </path>
-              </svg>
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M8 8l8 8M8 16l8-8" />
+                </svg>
+              )}
             </div>
 
-            <DialogTitle className="text-2xl font-bold text-green-700">
-              Booking Successful 🎉
+            <DialogTitle
+              className={`text-2xl font-bold ${
+                dialogStatus === "success" ? "text-green-700" : "text-red-700"
+              }`}
+            >
+              {dialogStatus === "success"
+                ? "Booking Successful 🎉"
+                : "Booking Failed ❌"}
             </DialogTitle>
 
-            <p className="text-black-700 mt-2 font-medium">
-              Your booking has been confirmed.
+            <p className="text-gray-700 mt-2 font-medium">
+              {dialogStatus === "success"
+                ? "Your booking has been confirmed."
+                : "There was a problem with your booking. Please try again."}
             </p>
-
-            <DialogDescription className="text-black-500 text-sm mt-3">
-              A confirmation email has been sent to{" "}
-              <span className="font-semibold text-green-600">{form.email}</span>. <br />
-              We look forward to hosting you at{" "}
-              <span className="font-semibold">Mbooni Pride Hotel</span>.
-            </DialogDescription>
-
-            <p className="text-xs text-gray-400 mt-4">This will close automatically.</p>
           </DialogContent>
         </Dialog>
       </div>

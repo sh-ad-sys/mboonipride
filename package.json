@@ -31,14 +31,10 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-<<<<<<< HEAD
     "@types/estree": "^1.0.8",
     "@types/json-schema": "^7.0.15",
     "@types/json5": "^0.0.30",
     "@types/node": "^20.19.19",
-=======
-    "@types/node": "^20",
->>>>>>> 2f1c36eff76846b36e47b35d4c747403695cd57e
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-slick": "^0.23.13",

@@ -1,4 +1,4 @@
-export default function AboutPage() {
+﻿export default function AboutPage() {
   return (
     <section className="max-w-5xl mx-auto space-y-8">
       <h1 className="text-4xl font-bold text-center">About Mbooni Pride Hotel</h1>

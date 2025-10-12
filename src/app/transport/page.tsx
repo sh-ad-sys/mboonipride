@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 
@@ -28,13 +28,13 @@ export default function TransportPage() {
       <section className="py-12 px-6 md:px-20 bg-gray-50">
         <div className="max-w-4xl mx-auto space-y-6 text-lg leading-relaxed">
           <p>
-            Mbooni Pride Hotel ensures your comfort doesn’t stop at our doors. With our reliable and
-            flexible transport services, you can explore Mbooni and beyond with ease. Whether you’re
-            heading to the airport, exploring the countryside, or attending an event, we’ve got you covered.
+            Mbooni Pride Hotel ensures your comfort doesnâ€™t stop at our doors. With our reliable and
+            flexible transport services, you can explore Mbooni and beyond with ease. Whether youâ€™re
+            heading to the airport, exploring the countryside, or attending an event, weâ€™ve got you covered.
           </p>
           <p>
             Our professional drivers, modern vehicles, and 24/7 availability guarantee you a seamless
-            travel experience — always safe, prompt, and convenient.
+            travel experience â€” always safe, prompt, and convenient.
           </p>
         </div>
       </section>
@@ -118,7 +118,7 @@ const transportOptions = [
   {
     title: "Executive Car Rental",
     description:
-      "Hire a luxury vehicle with or without a driver — perfect for business travel.",
+      "Hire a luxury vehicle with or without a driver â€” perfect for business travel.",
     image: "/transport6.jpeg",
   },
 ];

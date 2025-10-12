@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
@@ -74,7 +74,7 @@ export default function Footer() {
 
       {/* Bottom Footer */}
       <div className="text-center py-4 text-sm text-gray-400 border-t border-gray-700">
-        © {new Date().getFullYear()} Mbooni Pride Hotel. All rights reserved.
+        Â© {new Date().getFullYear()} Mbooni Pride Hotel. All rights reserved.
       </div>
     </footer>
   );

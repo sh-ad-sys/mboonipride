@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 
@@ -25,7 +25,7 @@ export default function AddOnsPage() {
       <section className="py-12 px-6 md:px-20 bg-gray-50">
         <div className="max-w-4xl mx-auto space-y-6 text-lg leading-relaxed">
           <p>
-            Make your stay at <strong>Mbooni Pride Hotel</strong> even more unforgettable with our curated special add-ons. Whether you’re celebrating a milestone, treating a loved one, or simply elevating your experience — we offer customizable extras that bring a personal touch to your visit.
+            Make your stay at <strong>Mbooni Pride Hotel</strong> even more unforgettable with our curated special add-ons. Whether youâ€™re celebrating a milestone, treating a loved one, or simply elevating your experience â€” we offer customizable extras that bring a personal touch to your visit.
           </p>
           <p>
             These services are available during booking or upon request at the reception. Let us take care of the magic, while you enjoy every moment.
@@ -86,7 +86,7 @@ const addOns = [
   {
     title: "Birthday Surprise Package",
     description:
-      "Includes cake, balloons, décor, and room surprise setup tailored to your birthday preferences.",
+      "Includes cake, balloons, dÃ©cor, and room surprise setup tailored to your birthday preferences.",
     image: "/addons3.jpeg",
   },
   {
@@ -104,7 +104,7 @@ const addOns = [
   {
     title: "Gift Shop Voucher",
     description:
-      "Enjoy a shopping voucher to spend at our souvenir and essentials boutique — perfect for gifting.",
+      "Enjoy a shopping voucher to spend at our souvenir and essentials boutique â€” perfect for gifting.",
     image: "/addons6.jpeg",
   },
   {

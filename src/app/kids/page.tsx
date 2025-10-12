@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 
@@ -25,10 +25,10 @@ export default function FamilyPage() {
       <section className="py-12 px-6 md:px-20 bg-gray-50">
         <div className="max-w-4xl mx-auto space-y-6 text-lg leading-relaxed">
           <p>
-            At Mbooni Pride Hotel, we believe that a family getaway should be fun, relaxing, and unforgettable — for both parents and kids. Our Family & Kids Services are thoughtfully designed to cater to the comfort, safety, and enjoyment of all age groups.
+            At Mbooni Pride Hotel, we believe that a family getaway should be fun, relaxing, and unforgettable â€” for both parents and kids. Our Family & Kids Services are thoughtfully designed to cater to the comfort, safety, and enjoyment of all age groups.
           </p>
           <p>
-            From spacious family rooms to supervised play areas and kid-friendly dining, we’ve got everything covered to make your family feel right at home.
+            From spacious family rooms to supervised play areas and kid-friendly dining, weâ€™ve got everything covered to make your family feel right at home.
           </p>
         </div>
       </section>
@@ -80,11 +80,11 @@ const familyServices = [
   {
     title: "Family Rooms",
     description:
-      "Spacious interconnected rooms with extra beds, baby cots, and storage — ideal for families of all sizes.",
+      "Spacious interconnected rooms with extra beds, baby cots, and storage â€” ideal for families of all sizes.",
     image: "/kids1.jpeg",
   },
   {
-    title: "Kids’ Play Zone",
+    title: "Kidsâ€™ Play Zone",
     description:
       "Supervised indoor and outdoor play areas with games, toys, swings, and climbing equipment.",
     image: "/kids2.jpeg",
@@ -98,13 +98,13 @@ const familyServices = [
   {
     title: "Kid-Friendly Dining",
     description:
-      "Special kids’ menu with fun meals, colorful cutlery, and allergy-conscious options.",
+      "Special kidsâ€™ menu with fun meals, colorful cutlery, and allergy-conscious options.",
     image: "/kids4.jpeg",
   },
   {
     title: "Entertainment & Activities",
     description:
-      "Cartoon channels, kids’ movie nights, face painting, and weekend puppet shows.",
+      "Cartoon channels, kidsâ€™ movie nights, face painting, and weekend puppet shows.",
     image: "/kids5.jpeg",
   },
   {

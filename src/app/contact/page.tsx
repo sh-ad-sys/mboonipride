@@ -1,10 +1,7 @@
-'use client';
+﻿'use client';
 
-<<<<<<< HEAD
 import { useState, ChangeEvent, FormEvent } from 'react';
-=======
 import { useState, ChangeEvent, FormEvent} from 'react';
->>>>>>> 2f1c36eff76846b36e47b35d4c747403695cd57e
 import {
   Dialog,
   DialogContent,
@@ -14,11 +11,8 @@ import {
 } from '@/components/ui/dialog';
 
 export default function ContactPage() {
-<<<<<<< HEAD
   const [form, setForm] = useState({ full_name: '', email: '', message: '' });
-=======
   const [form, setForm] = useState({ name: '', email: '', message: '' });
->>>>>>> 2f1c36eff76846b36e47b35d4c747403695cd57e
   const [dialogOpen, setDialogOpen] = useState(false);
 
   const handleChange = (
@@ -28,7 +22,6 @@ export default function ContactPage() {
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-<<<<<<< HEAD
     e.preventDefault();
 
     try {
@@ -56,7 +49,6 @@ export default function ContactPage() {
   return (
     <section className="max-w-2xl mx-auto space-y-6 pt-28 pb-16 px-6 bg-gray-50">
       <h2 className="text-3xl font-bold text-center text-gray-800">Contact Us</h2>
-=======
   e.preventDefault();
 
   try {
@@ -88,26 +80,22 @@ export default function ContactPage() {
       <h2 className="text-3xl font-bold text-center text-gray-800">
         Contact Us
       </h2>
->>>>>>> 2f1c36eff76846b36e47b35d4c747403695cd57e
 
       <form
         onSubmit={handleSubmit}
         className="space-y-4 bg-white shadow p-6 rounded-lg"
       >
         <input
-<<<<<<< HEAD
           name="full_name"
           type="text"
           placeholder="Your Full Name"
           required
           value={form.full_name}
-=======
           name="name"
           type="text"
           placeholder="Your Name"
           required
           value={form.name}
->>>>>>> 2f1c36eff76846b36e47b35d4c747403695cd57e
           className="w-full p-3 border rounded"
           onChange={handleChange}
         />
@@ -141,7 +129,6 @@ export default function ContactPage() {
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <DialogContent className="text-center space-y-4">
           <div className="flex items-center justify-center">
-<<<<<<< HEAD
             <svg
               className="w-20 h-20 text-green-500"
               fill="none"
@@ -185,7 +172,6 @@ export default function ContactPage() {
             </svg>
           </div>
 
-=======
             {/* Animated Checkmark */}
              <svg
         className="w-20 h-20 text-green-500"
@@ -231,13 +217,12 @@ export default function ContactPage() {
     
             </div>
           
->>>>>>> 2f1c36eff76846b36e47b35d4c747403695cd57e
           <DialogHeader>
             <DialogTitle className="text-green-600 text-center font-bold">
-              Message Sent Successfully 🎉
+              Message Sent Successfully ðŸŽ‰
             </DialogTitle>
             <DialogDescription className="text-gray-700 text-center">
-              Thanks for reaching out! We’ll get back to you shortly.
+              Thanks for reaching out! Weâ€™ll get back to you shortly.
             </DialogDescription>
           </DialogHeader>
         </DialogContent>

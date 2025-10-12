@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import {
@@ -88,11 +88,11 @@ export default function EventsPage() {
               Why Host With Mbooni Pride?
             </h3>
             <ul className="space-y-3">
-              <li>✔️ Versatile halls for both large and small events</li>
-              <li>✔️ High-speed internet and presentation equipment</li>
-              <li>✔️ On-site catering with customizable menus</li>
-              <li>✔️ Ample parking and security services</li>
-              <li>✔️ Dedicated event planning support</li>
+              <li>âœ”ï¸ Versatile halls for both large and small events</li>
+              <li>âœ”ï¸ High-speed internet and presentation equipment</li>
+              <li>âœ”ï¸ On-site catering with customizable menus</li>
+              <li>âœ”ï¸ Ample parking and security services</li>
+              <li>âœ”ï¸ Dedicated event planning support</li>
             </ul>
           </div>
           <div>
