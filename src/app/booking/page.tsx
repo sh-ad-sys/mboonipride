@@ -24,13 +24,14 @@ export default function BookingPage() {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [dialogStatus, setDialogStatus] = useState<"success" | "error">("success");
 
-  // Map room types to DB room IDs (adjust IDs if needed)
+  // Map room types to DB room IDs
   const roomMap: { [key: string]: string } = {
     Single: "3",
     Twin: "2",
     Deluxe: "1",
   };
 
+  // Auto-close success modal after 4 seconds
   useEffect(() => {
     if (dialogOpen && dialogStatus === "success") {
       const timer = setTimeout(() => setDialogOpen(false), 4000);
@@ -38,6 +39,7 @@ export default function BookingPage() {
     }
   }, [dialogOpen, dialogStatus]);
 
+  // Handle input changes
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
@@ -49,6 +51,7 @@ export default function BookingPage() {
     }));
   };
 
+  // Submit booking
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -140,6 +143,7 @@ export default function BookingPage() {
               value={form.name}
               onChange={handleChange}
             />
+
             <input
               name="email"
               type="email"
@@ -215,7 +219,7 @@ export default function BookingPage() {
 
             <button
               type="submit"
-              className="w-full bg-yellow-400 hover:bg-yellow-500 text-black py-3 rounded font-semibold"
+              className="w-full bg-yellow-400 hover:bg-yellow-500 text-black py-3 rounded font-semibold transition-all"
             >
               Confirm Booking
             </button>
@@ -292,11 +296,11 @@ export default function BookingPage() {
                 : "Booking Failed ❌"}
             </DialogTitle>
 
-            <p className="text-gray-700 mt-2 font-medium">
+            <DialogDescription className="text-gray-700 mt-2 font-medium">
               {dialogStatus === "success"
-                ? "Your booking has been confirmed."
+                ? "Your booking has been confirmed. We look forward to host you at Mbooni Pride Hotel"
                 : "There was a problem with your booking. Please try again."}
-            </p>
+            </DialogDescription>
           </DialogContent>
         </Dialog>
       </div>
